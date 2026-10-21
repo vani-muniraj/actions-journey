@@ -1,0 +1,14 @@
+name: inspect
+on: push
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: kernel version
+        run: |
+          echo "kernel version is $(uname -a)"
+          ls -la
+      - name: print number of files
+        run: ls -la |wc -l
