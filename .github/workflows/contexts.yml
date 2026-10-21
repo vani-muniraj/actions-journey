@@ -8,10 +8,11 @@ jobs:
         uses: actions/checkout@v4
       - name: all command to get metadata
         run: |
-        echo "full branch name: ${{ github.ref }}"
-        echo "just branch: ${{ github.ref_name }}"
-        echo "commit: ${{ github.sha }}"
-        echo "user: ${{ github.actor }}"
-        echo "event: ${{ github.event_name }}"
-        echo "runner os: ${{ runner.os }}"
-        echo "runner os: ${{ runner.arch }}"
+          echo "full branch name: ${{ github.ref }}"
+          echo "just branch: ${{ github.ref_name }}"
+          echo "commit: ${{ github.sha }}"
+          echo "user: ${{ github.actor }}"
+          echo "event: ${{ github.event_name }}"
+          echo "runner os: ${{ runner.os }}"
+          echo "runner os: ${{ runner.arch }}"
+
