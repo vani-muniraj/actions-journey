@@ -1,16 +1,24 @@
 name: context to get git hub and runner details
 on: push
+env:
+  APP_NAME: new
 jobs:
   context:
     runs-on: ubuntu-22.04
+    env:
+      log_level: info
     steps:
       - name: checkout
         uses: actions/checkout@v4
+        
       - name: all command to get metadata
+        env:
+          log_: error
         run: |
+          echo "call variable workflow $APP_NAME jobs $log_level }}
           echo "full branch name: ${{ github.ref }}"
           echo "just branch: ${{ github.ref_name }}"
-          echo "commit: ${{ github.sha }}"
+          echo "commit: ${{ github.sha }}"  
           echo "user: ${{ github.actor }}"
           echo "event: ${{ github.event_name }}"
           echo "runner os: ${{ runner.os }}"
