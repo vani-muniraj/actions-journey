@@ -4,6 +4,8 @@ jobs:
   context:
     runs-on: ubuntu-22.04
     steps:
+      - name: checkout
+        uses: actions/checkout@v4
       - name: all command to get metadata
         run: |
         echo "full branch name: ${{ github.ref }}"
