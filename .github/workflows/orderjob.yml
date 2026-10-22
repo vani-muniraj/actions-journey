@@ -1,22 +1,19 @@
 name: order jobs
 on: push
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
-    outputs: 
+    outputs:
       version: ${{ steps.ver.outputs.version }}
     steps:
-      - name: checkout code
+      - name: Compute version
         id: ver
-        run: echo "1,2"  >> "$GITHUB_OUTPUT"
-     
-  echo:
+        run: echo "version=1.4.2" >> "$GITHUB_OUTPUT"
+  deploy:
     runs-on: ubuntu-latest
-    needs: test
+    needs: build
     steps:
-      - name: echo value
-        run: echo "$needs.build.outputs.version"
-
+      - run: echo "Deploying ${{ needs.build.outputs.version }}"
 
         
          
