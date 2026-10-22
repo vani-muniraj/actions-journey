@@ -4,6 +4,8 @@ jobs:
   artifact:
     runs-on: ubuntu-latest
     steps:
+      - name: create file
+        run: echo "hi" > report.txt
       - name: artifact action
         uses: actions/upload-artifact@v4
         with:
