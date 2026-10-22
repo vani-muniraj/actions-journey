@@ -8,13 +8,16 @@ jobs:
     steps:
       - name: checkout code
         id: ver
-        run: echo "1,2"
+        run: echo "1,2"  >> "$GITHUB_OUTPUT"
      
   echo:
     runs-on: ubuntu-latest
     needs: test
     steps:
       - name: echo value
-        run: echo "$steps.ver.outputs.version"
+        run: echo "$needs.build.outputs.version"
+
+
+        
          
     
