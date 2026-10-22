@@ -3,14 +3,18 @@ on: push
 jobs:
   test:
     runs-on: ubuntu-latest
+    outputs: 
+      version: ${{ steps.ver.outputs.version }}
     steps:
       - name: checkout code
+        id: ver
+        run: echo "1,2"
         uses: actions/checkout@v4
   echo:
     runs-on: ubuntu-latest
     needs: test
     steps:
       - name: echo value
-        run: ls
+        run: echo "$steps.ver.outputs.version"
          
     
