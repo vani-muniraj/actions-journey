@@ -9,7 +9,7 @@ jobs:
       - name: checkout code
         id: ver
         run: echo "1,2"
-        uses: actions/checkout@v4
+     
   echo:
     runs-on: ubuntu-latest
     needs: test
