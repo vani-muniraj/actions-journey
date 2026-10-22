@@ -16,6 +16,7 @@ jobs:
           log_: error
           app_token: ${{ secrets.TOKEN }}
         run: |
+          echo "$app_token"
           echo "env variable ${{ vars.DEPLOY_REGION }} "
           echo "call variable workflow $APP_NAME jobs $log_level"
           echo "full branch name: ${{ github.ref }}"
