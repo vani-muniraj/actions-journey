@@ -13,7 +13,7 @@ jobs:
         run: echo "hello"
   package:
     runs-on: ubuntu-latest
-    needs: [lint, unit-test]
+    needs: [lint, unit-tests]
     steps:
       - name: package
         run: echo "from package"
