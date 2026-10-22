@@ -15,6 +15,7 @@ jobs:
         env:
           log_: error
         run: |
+          echo "env variable ${{ vars.DEPLOY_REGION }} "
           echo "call variable workflow $APP_NAME jobs $log_level"
           echo "full branch name: ${{ github.ref }}"
           echo "just branch: ${{ github.ref_name }}"
