@@ -1,0 +1,19 @@
+name: release
+on: push
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: lint test
+        run: echo "hi"
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: unit test
+        run: echo "hello"
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: package
+        needs: [lint, unit-test]
+        run: echo "from package"
