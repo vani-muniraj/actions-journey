@@ -14,6 +14,7 @@ jobs:
       - name: all command to get metadata
         env:
           log_: error
+          app_token: ${{ secrets.TOKEN }}
         run: |
           echo "env variable ${{ vars.DEPLOY_REGION }} "
           echo "call variable workflow $APP_NAME jobs $log_level"
