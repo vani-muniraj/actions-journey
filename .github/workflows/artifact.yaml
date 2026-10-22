@@ -1,0 +1,12 @@
+name: artifact
+on: push
+jobs:
+  artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: artifact action
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-report
+          path: report.txt
+          retention-days: 5
