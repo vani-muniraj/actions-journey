@@ -12,3 +12,13 @@ jobs:
           name: build-report
           path: report.txt
           retention-days: 5
+   download:
+     needs: artifact
+     runs-on: ubuntu-latest
+     steps:
+       - name: download file
+         uses: actions/download-artifact@v4
+         with:
+           name: build-report
+       - name: verify
+         run: test -f report.txt
